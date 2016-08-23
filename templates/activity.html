@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Logger{% endblock %}
+{% block content %}
+  <script>
+    var activities_index = 0;
+    var underway = {{ in_progress }};
+    var current_description = '{{ description }}';
+    var current_start_time = '{{ start_time }}';
+  </script>
+  <div class="user-panel">
+    <div class="user-panel-username">{{ g.user.username }}</div>
+    <form method="post" action="/logout">
+      <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
+      <button type="submit">Log Out</button>
+    </form>
+  </div>
+  <div class="shell">
+   <div id="activity-form-wrapper">
+      <form id="activity-form">
+          <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
+        <p>
+          <label for="activity-input">Describe your activity: </label>
+          <input type="text" id="activity-input" name="activity-input" maxlength="100">
+        </p>
+        <p>
+          <button type="submit" id="activity-button" data-state="ready">Begin</button>
+        </p>
+      </form>
+    </div>
+    <div id="current-activity-wrapper">
+      <p>Activity in progress: <span id="current-activity-description"></span></p>
+      <p>Started <span id="current-activity-start"></span></p>
+    </div>
+    <div>
+      <button id="prev-activities">Previous</button>
+      <button id="next-activities">Next</button>
+      <ul id="activity-list">
+      </ul>
+    </div>
+  </div>
+  <script src="/static/scripts/activity.js"></script>
+{% endblock %}

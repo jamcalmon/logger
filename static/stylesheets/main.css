@@ -1,0 +1,62 @@
+html {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body {
+
+}
+
+.shell {
+    margin: auto;
+    width: 80%;
+}
+
+.splash-page-header {
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.user-panel {
+    background-color: lightgrey;
+    width: 100%;
+}
+
+.user-panel div {
+    display: inline;
+}
+
+.user-panel form {
+    display: inline;
+}
+
+form {
+    display: table;
+}
+
+form p {
+    display: table-row;
+}
+
+form label {
+    display: table-cell;
+    padding-right: 1em;
+}
+
+form input {
+    display: table-cell;
+}
+
+.splash-page {
+    text-align: center;
+}
+
+.flashes {
+    color: red;
+}
