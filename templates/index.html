@@ -14,37 +14,39 @@
     <div class="splash-page-header">
       <h1>Logger</h1>
     </div>
-    <form class="left" id="login-form" method="post" action="/login">
-      <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
-      <p>
-        <label for="username-login">Username </label>
-        <input type="text" id="username-login" name="username">
-      </p>
-      <p>
-        <label for="password-login">Password </label>
-        <input type="password" id="password-login" name="password">
-      </p>
-      <p>
-        <button type="submit">Log In</button>
-      </p>
-    </form>
-    <form class="right" id="register-form" method="post" action="/register">
-      <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
-      <p>
-        <label for="username-register">Username </label>
-        <input type="text" id="username-register" name="username">
-      </p>
-      <p>
-        <label for="password-register">Password </label>
-        <input type="password" id="password-register" name="password">
-      </p>
-      <p>
-        <label for="password-confirm">Confirm password </label>
-        <input type="password" id="password-confirm" name="password-confirm">
-      </p>
-      <p>
-        <button type="submit">Sign Up</button>
-      </p>
-    </form>
+    <div id="auth-forms-wrapper">
+      <form class="auth-form left" id="login-form" method="post" action="/login">
+        <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
+        <p>
+          <label for="username-login">Username </label>
+          <input type="text" id="username-login" name="username">
+        </p>
+        <p>
+          <label for="password-login">Password </label>
+          <input type="password" id="password-login" name="password">
+        </p>
+        <p>
+          <button class="auth-form-button" type="submit">Log In</button>
+        </p>
+      </form>
+      <form class="auth-form right" id="register-form" method="post" action="/register">
+        <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
+        <p>
+          <label for="username-register">Username </label>
+          <input type="text" id="username-register" name="username">
+        </p>
+        <p>
+          <label for="password-register">Password </label>
+          <input type="password" id="password-register" name="password">
+        </p>
+        <p>
+          <label for="password-confirm">Confirm password </label>
+          <input type="password" id="password-confirm" name="password-confirm">
+        </p>
+        <p>
+          <button class="auth-form-button" type="submit">Sign Up</button>
+        </p>
+      </form>
+    </div>
   </div>
 {% endblock %}

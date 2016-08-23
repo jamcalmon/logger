@@ -3,7 +3,13 @@ html {
 }
 
 body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
 
+ul {
+    list-style-type: none;
 }
 
 .shell {
@@ -15,25 +21,8 @@ body {
     text-align: center;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.user-panel {
-    background-color: lightgrey;
-    width: 100%;
-}
-
-.user-panel div {
-    display: inline;
-}
-
-.user-panel form {
-    display: inline;
+#auth-forms-wrapper {
+    text-align: center;
 }
 
 form {
@@ -51,6 +40,77 @@ form label {
 
 form input {
     display: table-cell;
+}
+
+.auth-form {
+    background-color: lightgrey;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    overflow: auto;
+}
+
+.user-panel {
+    background-color: lightgrey;
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+}
+
+.user-panel div {
+    display: inline-block;
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.user-panel form {
+    display: inline-block;
+}
+
+#activity-form-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 1em;
+    margin-bottom: 1em;
+    border-right: 2px solid black;
+}
+
+#current-activity-wrapper {
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 1em;
+}
+
+#current-activity-wrapper p {
+    display: table-row;
+}
+
+#activity-list-wrapper {
+    padding-top: 1em;
+    border-top: 2px solid black;
+}
+
+#activity-list {
+    height: 25rem;
+    overflow-y: scroll;
+    padding-left: 0;
+}
+
+.activity-li-desc {
+    padding-left: 1em;
+    font-weight: bold;
+}
+
+#activity-list li.top-li:nth-child(odd) {
+    background-color: lightblue;
+}
+
+#activity-list li.top-li:nth-child(even) {
+    background-color: silver;
 }
 
 .splash-page {

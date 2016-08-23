@@ -1,8 +1,8 @@
 $(window).load(function() {
     $('#current-activity-wrapper').hide();
-    $('#next-activities').hide();
+    $('#next-activities').prop('disabled', true);
     if (activities_index < 1) {
-        $('#prev-activities').hide();
+        $('#prev-activities').prop('disabled', true);
     }
     console.log('Loaded window.');
     $('#activity-input').val('');
@@ -68,8 +68,9 @@ $('#next-activities').click( function() {
         activities_index -= 1;
     }
     else {
-        $('#prev-activities').show();
+        $('#prev-activities').prop('disabled', false);
     }
+    $('#activity-list').scrollTop(0);
 });
 
 $('#prev-activities').click( function() {
@@ -83,8 +84,9 @@ $('#prev-activities').click( function() {
         return;
     }
     if (activities_index < 1) {
-        $('#prev-activities').hide();
+        $('#prev-activities').prop('disabled', true);
     }
+    $('#activity-list').scrollTop(0);
 });
 
 function begin_activity(activity) {
@@ -106,11 +108,11 @@ function finish_activity() {
     $('#activity-input').prop('disabled', false);
     button.text('Begin');
     button.attr('data-state', 'ready');
-    $('#prev-activities').hide();
+    $('#prev-activities').prop('disabled', true);
     $('#current-activity-wrapper').hide();
 }
 
-var activity_templ = '<li>{{ description }}<ul><li>Started {{ start }}</li><li>Ended {{ end }}</li><li>{{ duration }}</li></ul></li>';
+var activity_templ = '<li class="top-li"><span class="activity-li-desc">{{ description }}</span><ul><li>Started {{ start }}</li><li>Ended {{ end }}</li><li>{{ duration }}</li></ul></li>';
 
 function populate_activities(obj) {
     $('#activity-list li').remove();
@@ -165,11 +167,12 @@ function get_activities() {
             console.log('Received list of activities.');
             populate_activities(result);
             if (result.has_next == 1) {
-                $('#next-activities').show();
+                $('#next-activities').prop('disabled', false);
             }
             else {
-                $('#next-activities').hide();
+                $('#next-activities').prop('disabled', true);
             }
+            $('#activity-list').scrollTop(0);
             return 1;
         },
         error: function(result) {
