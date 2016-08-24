@@ -56,8 +56,7 @@ form input {
 .user-panel {
     background-color: lightgrey;
     width: 100%;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0.5em 1em 0.5em 1em;
     margin-bottom: 1em;
 }
 
@@ -138,5 +137,29 @@ form input {
     .auth-form {
         text-align: left;
         margin: auto;
+    }
+
+    .shell {
+        width: 100%;
+    }
+
+    #activity-form-wrapper {
+        display: block;
+        padding: 0 0 1em 1em;
+        margin-bottom: 1em;
+        border-right: 0 solid black;
+        border-bottom: 2px solid black;
+    }
+
+    #current-activity-wrapper {
+        display: block;
+        padding: 0 0 1em 1em;
+    }
+
+    #activity-list {
+        height: auto;
+        overflow-y: visible;
+        padding-left: 0;
+        word-wrap: break-word;
     }
 }
