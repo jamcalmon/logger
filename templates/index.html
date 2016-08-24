@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Logger{% endblock %}
 {% block content %}
-  <div class="shell">
     {% with flashed_messages = get_flashed_messages() %}
       {% if flashed_messages %}
         <ul class=flashes>
@@ -15,6 +14,7 @@
       <h1>Logger</h1>
     </div>
     <div id="auth-forms-wrapper">
+      <div class="auth-form-wrapper">
       <form class="auth-form left" id="login-form" method="post" action="/login">
         <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
         <p>
@@ -29,6 +29,8 @@
           <button class="auth-form-button" type="submit">Log In</button>
         </p>
       </form>
+        </div>
+      <div class="auth-form-wrapper">
       <form class="auth-form right" id="register-form" method="post" action="/register">
         <input name="csrf_token" type="hidden" value="{{ session.csrf_token }}">
         <p>
@@ -47,6 +49,6 @@
           <button class="auth-form-button" type="submit">Sign Up</button>
         </p>
       </form>
+        </div>
     </div>
-  </div>
 {% endblock %}
