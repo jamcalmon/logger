@@ -2,7 +2,7 @@
 ## by John McAlmon
 Flask app for logging time spent on activities.
 
-You can demo this app at http://104.236.212.45/
+You can demo this app at https://logger.jamcalmon.com/
 
 Upcoming features:
 - Admin panel
